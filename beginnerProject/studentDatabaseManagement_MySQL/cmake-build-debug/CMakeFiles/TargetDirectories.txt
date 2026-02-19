@@ -1,0 +1,3 @@
+D:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/cmake-build-debug/CMakeFiles/studentDatabaseManagement_MySQL_.dir
+D:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
