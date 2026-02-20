@@ -1,0 +1,13 @@
+//
+// Created by lenovo on 20/02/2026.
+//
+
+#ifndef INVENTORYSYSTEM_MYSQL_DATABASE_H
+#define INVENTORYSYSTEM_MYSQL_DATABASE_H
+
+
+class Database {
+};
+
+
+#endif //INVENTORYSYSTEM_MYSQL_DATABASE_H
