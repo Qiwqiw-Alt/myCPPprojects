@@ -12,14 +12,15 @@ Database db;
 
 void initialDisplay();
 void showAllStudents();
-void addStudent(); // Create
-void showStudentDetail(); // Read
-void updateStudentDetail(); // Update
-void removeStudent(); // Delete
+void addStudent();
+void showStudentDetail();
+void updateStudentDetail();
+void removeStudent();
 void readData();
-void writeData();
-void writeDataAppend(const string& id, const string& name,const string& major, int age, double GPA);
+void writeDataAppend(const Student& st);
 string idGenerator();
+void syncUpdateToDB(const Student& st);
+void syncRemoveFromDB(const string& id);
 
 int main() {
     readData();
@@ -34,7 +35,7 @@ void initialDisplay() {
 
     do {
         showAllStudents();
-        cout << "\n=========== Welcome to Student Database Management ============\n";
+        cout << "\n=================== Welcome to Student Database Management ====================\n";
         cout << "(1) Add new student" << endl;
         cout << "(2) Show Student Details" << endl;
         cout << "(3) Update Student Details" << endl;
@@ -54,16 +55,16 @@ void initialDisplay() {
 }
 
 void showAllStudents() {
-    cout << "======================== Students List ========================\n";
+    cout << "================================ Students List ================================\n";
     for (int i = 0; i < students.size(); i++) {
-        cout << format("{}. {:<6} | {:<20} | {:<15} | {:.3f}\n", i + 1,
-            students[i].id, students[i].name, students[i].major, students[i].GPA);
+        cout << format("{}. {:<6} | {:<20} | {:<15} | {:<15} | {:.3f}\n", i + 1,
+            students[i].getId(), students[i].getName(), students[i].getEmail(), students[i].getMajor(), students[i].getGPA());
     }
-    cout << "===============================================================" << endl;
+    cout << "===============================================================================" << endl;
 }
 
 void addStudent() {
-    string name, major;
+    string name, email, major;
     int age;
     double GPA;
 
@@ -71,8 +72,9 @@ void addStudent() {
 
     do {
         string id = idGenerator();
-        cout << "\n==================== Add new student menu =====================\n";
+        cout << "\n============================ Add new student menu =============================\n";
         cout << "Enter student name: "; getline(cin >> ws, name);
+        cout << "Enter student email: "; getline(cin >> ws, email);
         cout << "Enter student major: "; getline(cin >> ws, major);
         do {
             cout << "Enter student age: "; cin >> age;
@@ -89,8 +91,9 @@ void addStudent() {
             }
         } while (GPA < 1 && GPA > 4);
 
-        students.push_back({id, name, major, age, GPA});
-        writeDataAppend(id, name, major, age, GPA);
+        Student newStudent = Student(id, name, email, major, age, GPA);
+        students.push_back(newStudent);
+        writeDataAppend(newStudent);
 
         cout << "Want to add another student? (y/n): "; cin >> addAnotherStudent;
     } while (addAnotherStudent == 'y' || addAnotherStudent == 'Y');
@@ -103,8 +106,7 @@ void showStudentDetail() {
     char showAnotherStudent;
 
     do {
-
-        cout << "\n================== Show student detail menu ===================\n";
+        cout << "\n========================== Show student detail menu ==========================\n";
         showAllStudents();
         do {
             cout << "Enter the student serial number:"; cin >> studentSerialNumber;
@@ -112,14 +114,16 @@ void showStudentDetail() {
                 cout << "Please enter valid student serial number!" << endl;
             } else {
                 const Student& stSelected = students[studentSerialNumber - 1];
-                cout << "(1) Name: " << stSelected.name << endl;
-                cout << "(2) Major: " << stSelected.major << endl;
-                cout << "(3) Age  : " << stSelected.age << endl;
-                cout << "(4) GPA  : " << stSelected.GPA << endl;
+                cout << "(1) Id   : " << stSelected.getId() << endl;
+                cout << "(2) Name : " << stSelected.getName() << endl;
+                cout << "(3) Email: " << stSelected.getEmail() << endl;
+                cout << "(4) Major: " << stSelected.getMajor() << endl;
+                cout << "(5) Age  : " << stSelected.getAge() << endl;
+                cout << "(6) GPA  : " << stSelected.getGPA() << endl;
             }
 
-            cout << "Want to see another student detail? (y/n): "; cin >> showAnotherStudent;
         } while (studentSerialNumber - 1 < 0 || studentSerialNumber - 1 > maxStudent - 1);
+        cout << "Want to see another student detail? (y/n): "; cin >> showAnotherStudent;
     } while (showAnotherStudent == 'y' || showAnotherStudent == 'Y');
 }
 
@@ -131,18 +135,24 @@ void updateStudentDetail() {
     char updateAnotherStudent;
 
     do {
-        cout << "\n================== Update student detail menu =================\n";
+        cout << "\n========================== Update student detail menu =========================\n";
         showAllStudents();
+
+        string name, email, major;
+        int age;
+        double gpa;
+
         do {
             cout << "Enter the student serial number:"; cin >> studentSerialNumber;
             if (studentSerialNumber - 1 < 0 || studentSerialNumber - 1 > maxStudent - 1) {
                 cout << "Please enter valid student serial number!" << endl;
             } else {
                 Student &stSelected = students[studentSerialNumber - 1];
-                cout << "(1) Name: " << stSelected.name << endl;
-                cout << "(2) Major: " << stSelected.major << endl;
-                cout << "(3) Age  : " << stSelected.age << endl;
-                cout << "(4) GPA  : " << stSelected.GPA << endl;
+                cout << "(1) Name : " << stSelected.getName() << endl;
+                cout << "(2) Email: " << stSelected.getEmail() << endl;
+                cout << "(3) Major: " << stSelected.getMajor() << endl;
+                cout << "(4) Age  : " << stSelected.getAge() << endl;
+                cout << "(5) GPA  : " << stSelected.getGPA() << endl;
                 cout << "(0) Cancel" << endl;
                 do {
                     cout << "Enter the detail you want to change: "; cin >> detailNumber;
@@ -151,20 +161,28 @@ void updateStudentDetail() {
                         case 0:
                             return;
                         case 1:
-                            cout << "Enter new name: "; getline(cin >> ws, stSelected.name);
-                            writeData();
+                            cout << "Enter new name: "; getline(cin >> ws, name);
+                            stSelected.setName(name);
+                            syncUpdateToDB(stSelected);
                             break;
                         case 2:
-                            cout << "Enter new major: "; getline(cin >> ws, stSelected.major);
-                            writeData();
-                            break;
+                            cout << "Enter new email: "; getline(cin >> ws, email);
+                            stSelected.setEmail(email);
+                            syncUpdateToDB(stSelected);
                         case 3:
-                            cout << "Enter new age: "; cin >> stSelected.age;
-                            writeData();
+                            cout << "Enter new major: "; getline(cin >> ws, major);
+                            stSelected.setMajor(major);
+                            syncUpdateToDB(stSelected);
                             break;
                         case 4:
-                            cout << "Enter new GPA: "; cin >> stSelected.GPA;
-                            writeData();
+                            cout << "Enter new age: "; cin >> age;
+                            stSelected.setAge(age);
+                            syncUpdateToDB(stSelected);
+                            break;
+                        case 5:
+                            cout << "Enter new GPA: "; cin >> gpa;
+                            stSelected.setGPA(gpa);
+                            syncUpdateToDB(stSelected);
                             break;
                         default:
                             cout << "Please select the correct detail number!";
@@ -173,8 +191,8 @@ void updateStudentDetail() {
                 } while (detailNumber < 0 || detailNumber > 4);
             }
 
-            cout << "Want to update another student detail? (y/n): "; cin >> updateAnotherStudent;
         } while (studentSerialNumber - 1 < 0 || studentSerialNumber - 1 > maxStudent - 1);
+        cout << "Want to update another student detail? (y/n): "; cin >> updateAnotherStudent;
     } while (updateAnotherStudent == 'y' || updateAnotherStudent == 'Y');
 }
 
@@ -185,20 +203,20 @@ void removeStudent() {
     char removeAnotherStudent;
 
     do {
-        cout << "\n==================== Remove student  menu =====================\n";
+        cout << "\n============================ Remove student  menu =============================\n";
         showAllStudents();
         do {
             cout << "Enter the student serial number:"; cin >> studentSerialNumber;
             if (studentSerialNumber - 1 < 0 || studentSerialNumber - 1 > maxStudent - 1) {
                 cout << "Please enter valid student serial number!" << endl;
             } else {
-                cout << format("Student with id {} removed", students[studentSerialNumber - 1].id) << endl;;
+                cout << format("Student with id {} removed", students[studentSerialNumber - 1].getId()) << endl;;
                 students.erase(students.begin() + studentSerialNumber - 1);
-                writeData();
+                syncRemoveFromDB(students[studentSerialNumber - 1].getId());
             }
 
-            cout << "Want to remove another student? (y/n): "; cin >> removeAnotherStudent;
         } while (studentSerialNumber - 1 < 0 || studentSerialNumber - 1 > maxStudent - 1);
+        cout << "Want to remove another student? (y/n): "; cin >> removeAnotherStudent;
     } while (removeAnotherStudent == 'y' || removeAnotherStudent == 'Y');
 }
 
@@ -265,4 +283,41 @@ string idGenerator() {
     }
 
     return format("ST{:03}", max + 1);
+}
+
+void syncUpdateToDB(const Student& st) {
+    if (!db.isConnected()) return;
+
+    try {
+        sql::PreparedStatement *pstmt = db.getConnection()->prepareStatement(
+            "UPDATE students SET name=?, email=?, major=?, age=?, gpa=?, WHERE id=?"
+        );
+
+        pstmt->setString(1, st.getName());
+        pstmt->setString(2, st.getName());
+        pstmt->setString(3, st.getMajor());
+        pstmt->setInt(4, st.getAge());
+        pstmt->setDouble(5, st.getGPA());
+        pstmt->setString(6, st.getId());
+
+        pstmt->executeUpdate();
+        delete pstmt;
+    } catch (sql::SQLException& e) {
+        cout << "Error!: " << e.what() << endl;
+    }
+}
+
+void syncRemoveFromDB(const string& id) {
+    if (!db.isConnected()) return;
+
+    try {
+        sql::PreparedStatement *pstmt = db.getConnection()->prepareStatement(
+          "DELETE FROM students WHERE id=?"
+        );
+        pstmt->setString(1, id);
+
+        pstmt->executeUpdate();
+    } catch (sql::SQLException& e) {
+        cout << "Error!: " << e.what() << endl;
+    }
 }

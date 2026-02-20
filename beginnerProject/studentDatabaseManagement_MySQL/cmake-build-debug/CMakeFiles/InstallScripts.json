@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"D:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/cmake-build-debug/cmake_install.cmake"
+		"D:/learnCPP/beginnerProject/studentDatabaseManagement_MySQL/cmake-build-debug/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

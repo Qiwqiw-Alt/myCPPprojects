@@ -32,14 +32,14 @@ CONFIGURATION = Debug
 #############################################
 # Include rules file.
 
-include CMakeFiles/rules.ninja
+include CMakeFiles\rules.ninja
 
 # =============================================================================
 
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/cmake-build-debug/
+cmake_ninja_workdir = D$:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\cmake-build-debug\
 # =============================================================================
 # Object build statements for EXECUTABLE target studentDatabaseManagement_MySQL_
 
@@ -49,29 +49,35 @@ cmake_ninja_workdir = D$:/learnCPP/beginnerProject/studentDatabaseManagement(MyS
 
 build cmake_object_order_depends_target_studentDatabaseManagement_MySQL_: phony || .
 
-build CMakeFiles/studentDatabaseManagement_MySQL_.dir/main.cpp.obj: CXX_COMPILER__studentDatabaseManagement_MySQL__unscanned_Debug D$:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/main.cpp || cmake_object_order_depends_target_studentDatabaseManagement_MySQL_
+build CMakeFiles\studentDatabaseManagement_MySQL_.dir\main.cpp.obj: CXX_COMPILER__studentDatabaseManagement_MySQL__unscanned_Debug D$:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\main.cpp || cmake_object_order_depends_target_studentDatabaseManagement_MySQL_
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\studentDatabaseManagement_MySQL_.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -ID:/mysql-connector-c++-9.6.0-winx64/include
+  DEFINES = -DCPPCONN_PUBLIC_FUNC="" -DSTATIC_CONCPP
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd
+  INCLUDES = -ID:\mysql-connector-c++-9.6.0-winx64\include\jdbc
   OBJECT_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   OBJECT_FILE_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
+  TARGET_COMPILE_PDB = CMakeFiles\studentDatabaseManagement_MySQL_.dir\
+  TARGET_PDB = studentDatabaseManagement_MySQL_.pdb
 
-build CMakeFiles/studentDatabaseManagement_MySQL_.dir/Student.cpp.obj: CXX_COMPILER__studentDatabaseManagement_MySQL__unscanned_Debug D$:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/Student.cpp || cmake_object_order_depends_target_studentDatabaseManagement_MySQL_
+build CMakeFiles\studentDatabaseManagement_MySQL_.dir\Student.cpp.obj: CXX_COMPILER__studentDatabaseManagement_MySQL__unscanned_Debug D$:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\Student.cpp || cmake_object_order_depends_target_studentDatabaseManagement_MySQL_
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\studentDatabaseManagement_MySQL_.dir\Student.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -ID:/mysql-connector-c++-9.6.0-winx64/include
+  DEFINES = -DCPPCONN_PUBLIC_FUNC="" -DSTATIC_CONCPP
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd
+  INCLUDES = -ID:\mysql-connector-c++-9.6.0-winx64\include\jdbc
   OBJECT_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   OBJECT_FILE_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
+  TARGET_COMPILE_PDB = CMakeFiles\studentDatabaseManagement_MySQL_.dir\
+  TARGET_PDB = studentDatabaseManagement_MySQL_.pdb
 
-build CMakeFiles/studentDatabaseManagement_MySQL_.dir/Database.cpp.obj: CXX_COMPILER__studentDatabaseManagement_MySQL__unscanned_Debug D$:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/Database.cpp || cmake_object_order_depends_target_studentDatabaseManagement_MySQL_
+build CMakeFiles\studentDatabaseManagement_MySQL_.dir\Database.cpp.obj: CXX_COMPILER__studentDatabaseManagement_MySQL__unscanned_Debug D$:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\Database.cpp || cmake_object_order_depends_target_studentDatabaseManagement_MySQL_
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\studentDatabaseManagement_MySQL_.dir\Database.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -ID:/mysql-connector-c++-9.6.0-winx64/include
+  DEFINES = -DCPPCONN_PUBLIC_FUNC="" -DSTATIC_CONCPP
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd
+  INCLUDES = -ID:\mysql-connector-c++-9.6.0-winx64\include\jdbc
   OBJECT_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   OBJECT_FILE_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
+  TARGET_COMPILE_PDB = CMakeFiles\studentDatabaseManagement_MySQL_.dir\
+  TARGET_PDB = studentDatabaseManagement_MySQL_.pdb
 
 
 # =============================================================================
@@ -81,40 +87,42 @@ build CMakeFiles/studentDatabaseManagement_MySQL_.dir/Database.cpp.obj: CXX_COMP
 #############################################
 # Link the executable studentDatabaseManagement_MySQL_.exe
 
-build studentDatabaseManagement_MySQL_.exe: CXX_EXECUTABLE_LINKER__studentDatabaseManagement_MySQL__Debug CMakeFiles/studentDatabaseManagement_MySQL_.dir/main.cpp.obj CMakeFiles/studentDatabaseManagement_MySQL_.dir/Student.cpp.obj CMakeFiles/studentDatabaseManagement_MySQL_.dir/Database.cpp.obj
+build studentDatabaseManagement_MySQL_.exe: CXX_EXECUTABLE_LINKER__studentDatabaseManagement_MySQL__Debug CMakeFiles\studentDatabaseManagement_MySQL_.dir\main.cpp.obj CMakeFiles\studentDatabaseManagement_MySQL_.dir\Student.cpp.obj CMakeFiles\studentDatabaseManagement_MySQL_.dir\Database.cpp.obj | D$:\mysql-connector-c++-9.6.0-winx64\lib64\vs14\mysqlcppconn.lib
   CONFIG = Debug
-  FLAGS = -g
-  LINK_LIBRARIES = -lmysqlcppconn  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LD:/mysql-connector-c++-9.6.0-winx64/lib64
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = D:\mysql-connector-c++-9.6.0-winx64\lib64\vs14\mysqlcppconn.lib  ws2_32.lib  crypt32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_PATH = -LIBPATH:D:\mysql-connector-c++-9.6.0-winx64\lib64\vs14
   OBJECT_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\studentDatabaseManagement_MySQL_.dir\
   TARGET_FILE = studentDatabaseManagement_MySQL_.exe
-  TARGET_IMPLIB = libstudentDatabaseManagement_MySQL_.dll.a
-  TARGET_PDB = studentDatabaseManagement_MySQL_.exe.dbg
+  TARGET_IMPLIB = studentDatabaseManagement_MySQL_.lib
+  TARGET_PDB = studentDatabaseManagement_MySQL_.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\learnCPP\beginnerProject\studentDatabaseManagement(MySQL)\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.3.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.3.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build edit_cache: phony CMakeFiles/edit_cache.util
+build edit_cache: phony CMakeFiles\edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\learnCPP\beginnerProject\studentDatabaseManagement(MySQL)\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.3.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\learnCPP\beginnerProject\studentDatabaseManagement(MySQL) -BD:\learnCPP\beginnerProject\studentDatabaseManagement(MySQL)\cmake-build-debug"
+build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.3.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL -BD:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
@@ -127,7 +135,7 @@ build studentDatabaseManagement_MySQL_: phony studentDatabaseManagement_MySQL_.e
 # =============================================================================
 
 #############################################
-# Folder: D:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/cmake-build-debug
+# Folder: D:/learnCPP/beginnerProject/studentDatabaseManagement_MySQL/cmake-build-debug
 
 build all: phony studentDatabaseManagement_MySQL_.exe
 
@@ -138,14 +146,14 @@ build all: phony studentDatabaseManagement_MySQL_.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja D$:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/cmake-build-debug/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeRCCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake D$:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/CMakeLists.txt
+build build.ninja D$:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\cmake-build-debug\cmake_install.cmake: RERUN_CMAKE | C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Linker\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Linker\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\4.1.2\CMakeCCompiler.cmake CMakeFiles\4.1.2\CMakeCXXCompiler.cmake CMakeFiles\4.1.2\CMakeRCCompiler.cmake CMakeFiles\4.1.2\CMakeSystem.cmake D$:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.1/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeRCCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake D$:/learnCPP/beginnerProject/studentDatabaseManagement(MySQL)/CMakeLists.txt: phony
+build C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Internal\CMakeCLinkerInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Linker\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Linker\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Linker\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2025.3.1\bin\cmake\win\x64\share\cmake-4.1\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\4.1.2\CMakeCCompiler.cmake CMakeFiles\4.1.2\CMakeCXXCompiler.cmake CMakeFiles\4.1.2\CMakeRCCompiler.cmake CMakeFiles\4.1.2\CMakeSystem.cmake D$:\learnCPP\beginnerProject\studentDatabaseManagement_MySQL\CMakeLists.txt: phony
 
 
 #############################################

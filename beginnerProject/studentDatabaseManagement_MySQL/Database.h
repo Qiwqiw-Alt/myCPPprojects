@@ -4,11 +4,11 @@
 
 #ifndef STUDENTDATABASEMANAGEMENT_MYSQL__DATABASE_H
 #define STUDENTDATABASEMANAGEMENT_MYSQL__DATABASE_H
-#include <jdbc/mysql_driver.h>
-#include <jdbc/mysql_connection.h>
-#include <jdbc/cppconn/statement.h>
-#include <jdbc/cppconn/prepared_statement.h>
-#include <jdbc/cppconn/resultset.h>
+#include <mysql_driver.h>
+#include <mysql_connection.h>
+#include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
+#include <cppconn/resultset.h>
 
 class Database {
 protected:
