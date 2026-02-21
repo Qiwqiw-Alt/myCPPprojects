@@ -294,7 +294,7 @@ void syncUpdateToDB(const Student& st) {
         );
 
         pstmt->setString(1, st.getName());
-        pstmt->setString(2, st.getName());
+        pstmt->setString(2, st.getEmail());
         pstmt->setString(3, st.getMajor());
         pstmt->setInt(4, st.getAge());
         pstmt->setDouble(5, st.getGPA());
