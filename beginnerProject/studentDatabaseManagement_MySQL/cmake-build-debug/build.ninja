@@ -53,7 +53,7 @@ build CMakeFiles\studentDatabaseManagement_MySQL_.dir\main.cpp.obj: CXX_COMPILER
   CONFIG = Debug
   DEFINES = -DCPPCONN_PUBLIC_FUNC="" -DSTATIC_CONCPP
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd
-  INCLUDES = -ID:\mysql-connector-c++-9.6.0-winx64\include\jdbc
+  INCLUDES = -ID:\CppLibrary\mysql-connector-c++-9.6.0-winx64\include\jdbc
   OBJECT_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   OBJECT_FILE_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   TARGET_COMPILE_PDB = CMakeFiles\studentDatabaseManagement_MySQL_.dir\
@@ -63,7 +63,7 @@ build CMakeFiles\studentDatabaseManagement_MySQL_.dir\Student.cpp.obj: CXX_COMPI
   CONFIG = Debug
   DEFINES = -DCPPCONN_PUBLIC_FUNC="" -DSTATIC_CONCPP
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd
-  INCLUDES = -ID:\mysql-connector-c++-9.6.0-winx64\include\jdbc
+  INCLUDES = -ID:\CppLibrary\mysql-connector-c++-9.6.0-winx64\include\jdbc
   OBJECT_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   OBJECT_FILE_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   TARGET_COMPILE_PDB = CMakeFiles\studentDatabaseManagement_MySQL_.dir\
@@ -73,7 +73,7 @@ build CMakeFiles\studentDatabaseManagement_MySQL_.dir\Database.cpp.obj: CXX_COMP
   CONFIG = Debug
   DEFINES = -DCPPCONN_PUBLIC_FUNC="" -DSTATIC_CONCPP
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd
-  INCLUDES = -ID:\mysql-connector-c++-9.6.0-winx64\include\jdbc
+  INCLUDES = -ID:\CppLibrary\mysql-connector-c++-9.6.0-winx64\include\jdbc
   OBJECT_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   OBJECT_FILE_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   TARGET_COMPILE_PDB = CMakeFiles\studentDatabaseManagement_MySQL_.dir\
@@ -87,12 +87,12 @@ build CMakeFiles\studentDatabaseManagement_MySQL_.dir\Database.cpp.obj: CXX_COMP
 #############################################
 # Link the executable studentDatabaseManagement_MySQL_.exe
 
-build studentDatabaseManagement_MySQL_.exe: CXX_EXECUTABLE_LINKER__studentDatabaseManagement_MySQL__Debug CMakeFiles\studentDatabaseManagement_MySQL_.dir\main.cpp.obj CMakeFiles\studentDatabaseManagement_MySQL_.dir\Student.cpp.obj CMakeFiles\studentDatabaseManagement_MySQL_.dir\Database.cpp.obj | D$:\mysql-connector-c++-9.6.0-winx64\lib64\vs14\mysqlcppconn.lib
+build studentDatabaseManagement_MySQL_.exe: CXX_EXECUTABLE_LINKER__studentDatabaseManagement_MySQL__Debug CMakeFiles\studentDatabaseManagement_MySQL_.dir\main.cpp.obj CMakeFiles\studentDatabaseManagement_MySQL_.dir\Student.cpp.obj CMakeFiles\studentDatabaseManagement_MySQL_.dir\Database.cpp.obj | D$:\CppLibrary\mysql-connector-c++-9.6.0-winx64\lib64\vs14\mysqlcppconn.lib
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = D:\mysql-connector-c++-9.6.0-winx64\lib64\vs14\mysqlcppconn.lib  ws2_32.lib  crypt32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  LINK_PATH = -LIBPATH:D:\mysql-connector-c++-9.6.0-winx64\lib64\vs14
+  LINK_LIBRARIES = D:\CppLibrary\mysql-connector-c++-9.6.0-winx64\lib64\vs14\mysqlcppconn.lib  ws2_32.lib  crypt32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_PATH = -LIBPATH:D:\CppLibrary\mysql-connector-c++-9.6.0-winx64\lib64\vs14
   OBJECT_DIR = CMakeFiles\studentDatabaseManagement_MySQL_.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

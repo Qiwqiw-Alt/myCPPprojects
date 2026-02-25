@@ -6,7 +6,7 @@ using namespace std;
 Database::Database() {
     try {
         sql::mysql::MySQL_Driver *driver = sql::mysql::get_driver_instance();
-        conn = driver->connect("127.0.0.1:3306", "root", "");
+        conn = driver->connect("127.0.0.1:3306", "root", "root123");
         conn->setSchema("db_college_students"); // DB name
         cout << "Connection to database successfully created." << endl;
     } catch (sql::SQLException &e) {
