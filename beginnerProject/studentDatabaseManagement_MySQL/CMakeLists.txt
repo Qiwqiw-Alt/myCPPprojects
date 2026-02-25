@@ -6,8 +6,8 @@ project(studentDatabaseManagement_MySQL_)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CONNECTOR_INCLUDE_DIR "D:/mysql-connector-c++-9.6.0-winx64/include/jdbc")
-set(CONNECTOR_LIB_DIR     "D:/mysql-connector-c++-9.6.0-winx64/lib64/vs14")
+set(CONNECTOR_INCLUDE_DIR "D:/CppLibrary/mysql-connector-c++-9.6.0-winx64/include/jdbc")
+set(CONNECTOR_LIB_DIR     "D:/CppLibrary/mysql-connector-c++-9.6.0-winx64/lib64/vs14")
 
 include_directories(${CONNECTOR_INCLUDE_DIR})
 link_directories(${CONNECTOR_LIB_DIR})
@@ -20,7 +20,7 @@ add_executable(studentDatabaseManagement_MySQL_
         Database.h)
 
 target_link_libraries(studentDatabaseManagement_MySQL_ PRIVATE
-        "D:/mysql-connector-c++-9.6.0-winx64/lib64/vs14/mysqlcppconn.lib"
+        "D:/CppLibrary/mysql-connector-c++-9.6.0-winx64/lib64/vs14/mysqlcppconn.lib"
         ws2_32.lib
         crypt32.lib
 )
